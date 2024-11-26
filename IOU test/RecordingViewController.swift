@@ -18,6 +18,19 @@ class RecordingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCamera()
+        
+        label.text = "recording"
+        label.isHidden = true
+        label.textColor = .white
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(label)
+        
+        // Set constraints
+        NSLayoutConstraint.activate([
+            label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+        ])
     }
     
     func setupCamera() {
@@ -75,24 +88,37 @@ class RecordingViewController: UIViewController {
         view.addSubview(recordButton)
     }
     
+    let label = UILabel()
+    
     @objc func recordButtonTapped() {
-            if isRecording {
-                stopRecording()
-            } else {
-                startRecording()
-            }
+        if isRecording {
+            label.isHidden = true
+            stopRecording()
+        } else {
+            label.isHidden = false
+            startRecording()
         }
+    }
     
     func startRecording() {
-        let outputPath = NSTemporaryDirectory() + "output.mov"
-        let outputURL = URL(fileURLWithPath: outputPath)
-        videoOutput.startRecording(to: outputURL, recordingDelegate: self)
+        if let outputURL = generateOutputFileURL() {
+            videoOutput.startRecording(to: outputURL, recordingDelegate: self)
+        } else {
+            print("Failed to generate output file URL.")
+        }
         isRecording = true
     }
     
     func stopRecording() {
         videoOutput.stopRecording()
         isRecording = false
+    }
+    
+    func generateOutputFileURL() -> URL? {
+        let fileManager = FileManager.default
+        let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
+        let outputFileName = UUID().uuidString + ".mov" // Default format is `.mov`
+        return documentsDirectory?.appendingPathComponent(outputFileName)
     }
 }
 
