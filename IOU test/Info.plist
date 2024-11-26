@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Need photo library additions usage description</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Need photo library usage description</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>The app need your gallery access</string>
+    <key>NSCameraUsageDescription</key>
+    <string>We need access to the camera to take photos or videos.</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>We need access to the microphone to record audio with your videos.</string>
+</dict>
+</plist>
