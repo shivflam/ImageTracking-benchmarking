@@ -21,13 +21,20 @@ class ViewController: UIViewController {
     @objc func recordVideoTapped() {
         let storyborad = UIStoryboard(name: "Main", bundle: nil)
         if let recordVc = storyborad.instantiateViewController(withIdentifier: "RecordingViewController") as? RecordingViewController {
-            
             self.navigationController?.pushViewController(recordVc, animated: true)
         }
     }
     
     @objc func downloadCSVTapped() {
         print("downloadCSV tapped")
+    }
+    
+    @objc func openArViewContTapped() {
+        let storyborad = UIStoryboard(name: "Main", bundle: nil)
+        if let arVc = storyborad.instantiateViewController(withIdentifier: "VideoARViewController") as? VideoARViewController {
+            arVc.referenceImage = imageView.image
+            self.navigationController?.pushViewController(arVc, animated: true)
+        }
     }
     
     func setupViews() {
@@ -63,6 +70,22 @@ class ViewController: UIViewController {
             recordButton.heightAnchor.constraint(equalToConstant: 40)
         ])
         
+        let openArViewControllerBtn = UIButton()
+        openArViewControllerBtn.setTitle("Open ARVc", for: .normal)
+        openArViewControllerBtn.setTitleColor(.white, for: .normal)
+        openArViewControllerBtn.backgroundColor = .blue
+        openArViewControllerBtn.translatesAutoresizingMaskIntoConstraints = false
+        openArViewControllerBtn.addTarget(self, action: #selector(openArViewContTapped), for: .touchUpInside)
+        self.view.addSubview(openArViewControllerBtn)
+        
+        // Set constraints
+        NSLayoutConstraint.activate([
+            openArViewControllerBtn.topAnchor.constraint(equalTo: recordButton.bottomAnchor, constant: 10),
+            openArViewControllerBtn.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            openArViewControllerBtn.widthAnchor.constraint(equalToConstant: 140),
+            openArViewControllerBtn.heightAnchor.constraint(equalToConstant: 40)
+        ])
+        
         let downloadCsvTapped = UIButton()
         downloadCsvTapped.setTitle("Download CSV", for: .normal)
         downloadCsvTapped.setTitleColor(.white, for: .normal)
@@ -73,7 +96,7 @@ class ViewController: UIViewController {
         
         // Set constraints
         NSLayoutConstraint.activate([
-            downloadCsvTapped.topAnchor.constraint(equalTo: recordButton.bottomAnchor, constant: 10),
+            downloadCsvTapped.topAnchor.constraint(equalTo: openArViewControllerBtn.bottomAnchor, constant: 10),
             downloadCsvTapped.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             downloadCsvTapped.widthAnchor.constraint(equalToConstant: 140),
             downloadCsvTapped.heightAnchor.constraint(equalToConstant: 40)
@@ -135,7 +158,7 @@ class ViewController: UIViewController {
     
     func openMediaPicker() {
         var config = PHPickerConfiguration()
-        config.selectionLimit = 0 // 0 means no limit
+        config.selectionLimit = 1
         config.filter = .any(of: [.images])
 
         let picker = PHPickerViewController(configuration: config)

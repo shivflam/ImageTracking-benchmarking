@@ -40,6 +40,21 @@
             </objects>
             <point key="canvasLocation" x="1066.4122137404579" y="-2.1126760563380285"/>
         </scene>
+        <!--VideoAR View Controller-->
+        <scene sceneID="IIr-X6-sk2">
+            <objects>
+                <viewController storyboardIdentifier="VideoARViewController" id="dfb-4F-Zko" customClass="VideoARViewController" customModule="IOU_test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eao-o8-VTC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="XQy-1a-p2N"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hBC-ck-TEi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1682" y="728"/>
+        </scene>
         <!--Recording View Controller-->
         <scene sceneID="0jS-Lu-h7Y">
             <objects>

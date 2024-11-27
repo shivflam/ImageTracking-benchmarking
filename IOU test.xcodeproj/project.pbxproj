@@ -17,6 +17,8 @@
 		84616C7D2CF5A3BD001E1DB3 /* IOU_testUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84616C7C2CF5A3BD001E1DB3 /* IOU_testUITestsLaunchTests.swift */; };
 		84616C8C2CF5B47B001E1DB3 /* MediaPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84616C8B2CF5B47B001E1DB3 /* MediaPermission.swift */; };
 		84616C8E2CF5F070001E1DB3 /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84616C8D2CF5F070001E1DB3 /* RecordingViewController.swift */; };
+		84616C902CF71C50001E1DB3 /* VideoARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84616C8F2CF71C50001E1DB3 /* VideoARViewController.swift */; };
+		84616C922CF721E2001E1DB3 /* RecordedVideo.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 84616C912CF721E2001E1DB3 /* RecordedVideo.MOV */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		84616C7C2CF5A3BD001E1DB3 /* IOU_testUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOU_testUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		84616C8B2CF5B47B001E1DB3 /* MediaPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPermission.swift; sourceTree = "<group>"; };
 		84616C8D2CF5F070001E1DB3 /* RecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
+		84616C8F2CF71C50001E1DB3 /* VideoARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoARViewController.swift; sourceTree = "<group>"; };
+		84616C912CF721E2001E1DB3 /* RecordedVideo.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = RecordedVideo.MOV; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				84616C8B2CF5B47B001E1DB3 /* MediaPermission.swift */,
 				84616C5D2CF5A3BB001E1DB3 /* ViewController.swift */,
 				84616C8D2CF5F070001E1DB3 /* RecordingViewController.swift */,
+				84616C8F2CF71C50001E1DB3 /* VideoARViewController.swift */,
+				84616C912CF721E2001E1DB3 /* RecordedVideo.MOV */,
 			);
 			path = "IOU test";
 			sourceTree = "<group>";
@@ -236,6 +242,7 @@
 			files = (
 				84616C632CF5A3BD001E1DB3 /* Assets.xcassets in Resources */,
 				84616C662CF5A3BD001E1DB3 /* Base in Resources */,
+				84616C922CF721E2001E1DB3 /* RecordedVideo.MOV in Resources */,
 				84616C612CF5A3BB001E1DB3 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84616C902CF71C50001E1DB3 /* VideoARViewController.swift in Sources */,
 				84616C5E2CF5A3BB001E1DB3 /* ViewController.swift in Sources */,
 				84616C8E2CF5F070001E1DB3 /* RecordingViewController.swift in Sources */,
 				84616C5A2CF5A3BB001E1DB3 /* AppDelegate.swift in Sources */,
